@@ -34,5 +34,7 @@ public class TransactionController {
     public List<Transaction> getAllTransactions(){
 
         return transactionService.getAllTransactions();
+
+        
     }
 }
