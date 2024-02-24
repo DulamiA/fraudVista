@@ -1,9 +1,6 @@
 package com.example.fraudcore.Domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -19,7 +16,11 @@ public class Transaction {
     private Long amount;
     private String transactionType;
     private Date createdDate;
-    private int customerId;
+    private String utilityAccount;
+    private String beneficiaryAccount;
+
+    @ManyToOne
+    private Customer customer;
 
     public void setId(int id) {
         this.id = id;
@@ -61,11 +62,27 @@ public class Transaction {
         this.createdDate = createdDate;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public String getUtilityAccount() {
+        return utilityAccount;
+    }
+
+    public void setUtilityAccount(String utilityAccount) {
+        this.utilityAccount = utilityAccount;
+    }
+
+    public String getBeneficiaryAccount() {
+        return beneficiaryAccount;
+    }
+
+    public void setBeneficiaryAccount(String beneficiaryAccount) {
+        this.beneficiaryAccount = beneficiaryAccount;
     }
 }

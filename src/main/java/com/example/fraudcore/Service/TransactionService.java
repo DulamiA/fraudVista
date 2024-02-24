@@ -1,6 +1,7 @@
 package com.example.fraudcore.Service;
 
 import com.example.fraudcore.Domain.Transaction;
+import com.example.fraudcore.Model.TransactionDetailResponse;
 import com.example.fraudcore.Model.TransactionRequest;
 import com.example.fraudcore.Model.TransactionResponse;
 
@@ -11,5 +12,7 @@ public interface TransactionService {
     public String createCustomer(String name, String nic);
     public TransactionResponse createTransaction(TransactionRequest transactionRequest);
     public List<Transaction> getAllTransactions();
+    public List<TransactionDetailResponse> getTransactionByCustomerId(int custId) throws Exception;
+    public TransactionDetailResponse getTransactionById(int id);
 
 }
